@@ -1,0 +1,49 @@
+﻿<script id="SP500Template_Small" type="text/x-handlebars-template">
+    <div class="content">
+        <header>
+            <div class="Left">S&P 500</div>
+            <div class="MarketQuoteLast Right">{{sP500.last}}</div>
+        </header>
+        <section>
+            <div class="MarketQuoteDetails">        
+                {{> SP500Template_Partial}}
+            </div>
+        </section>
+    </div>
+</script>
+
+<script id="SP500Template_Medium" type="text/x-handlebars-template">
+    <div class="content">
+        <header>
+            <div class="Left">S&P 500</div>
+            <div class="MarketQuoteLast Right">{{sP500.last}}</div>
+        </header>
+        <section>
+            <div class="MarketQuoteDetails">        
+                {{> SP500Template_Partial}}
+            </div>
+            <div id="SP500Canvas" class="canvas"></div>
+        </section>
+    </div>
+</script>
+
+
+<script id="SP500Template_Large" type="text/x-handlebars-template">
+    <div class="content">
+        <header>
+            <div class="Left">S&P 500</div>
+            <div class="MarketQuoteLast Right">{{sP500.last}}</div>
+        </header>
+        <section>
+            <div class="MarketQuoteDetails">        
+                {{> SP500Template_Partial}}
+            </div>
+            <div id="SP500Canvas" class="canvas"></div>
+        </section>
+    </div>
+</script>
+
+<script id="SP500Template_Partial" type="text/x-handlebars-template">
+    <span class="MarketQuoteChange {{getChangeCSSClass sP500.change}}">{{addPlus sP500.change}}{{sP500.change}}</span>&nbsp;&nbsp;
+    <span class="MarketQuotePercentChange {{getChangeCSSClass sP500.percentChange}}">{{sP500.percentChange}}%</span>
+</script>

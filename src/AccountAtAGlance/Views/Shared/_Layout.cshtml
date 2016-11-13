@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Account at a Glance</title>
+
+        <environment names="Development">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+            <link href="~/css/site.css" rel="stylesheet" />
+            <link href="~/css/tilestyles.css" rel="stylesheet" />
+        </environment>
+        <environment names="Staging,Production">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="hidden" 
+                  asp-fallback-test-property="visibility" 
+                  asp-fallback-test-value="hidden" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+        @RenderSection("styles", required: false)
+    </head>
+    <body>
+        <div id="main">
+            @RenderBody()
+        </div>
+
+        <environment names="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+            <script src="~/lib/handlebars/handlebars.js"></script>
+            <script src="~/lib/jquery-formatcurrency/jquery.formatcurrency.js"></script>
+            <script src="~/lib/jquery.scroller/jquery.scroller-1.0.js"></script>
+            <script src="~/lib/flot/jquery.flot.js"></script>
+            <script src="~/lib/flot/jquery.flot.time.js"></script>
+            <script src="~/lib/raphael/raphael.js"></script>
+            <script src="~/lib/raphael-pie/raphael-pie.js"></script>
+            <script src="~/lib/jquery.easing/js/jquery.easing.js"></script>
+            <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+
+            <!-- Custom scripts -->
+            <script src="~/js/scene.dataservice.js"></script>
+            <script src="~/js/scene.handlebars.helpers.js"></script>
+            <script src="~/js/scene.layoutservice.js"></script>
+            <script src="~/js/scene.statemanager.js"></script>
+            <script src="~/js/scene.tile.binder.js"></script>
+            <script src="~/js/scene.tile.formatter.js"></script>
+            <script src="~/js/scene.tile.renderer.js"></script>
+        </environment>
+        <environment names="Staging,Production">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery">
+            </script>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+            <script src="~/lib/handlebars/handlebars.js"></script>
+            <script src="~/lib/jquery-formatcurrency/jquery.formatcurrency.js"></script>
+            <script src="~/lib/jquery.scroller/jquery.scroller-1.0.js"></script>
+            <script src="~/lib/flot/jquery.flot.js"></script>
+            <script src="~/lib/flot/jquery.flot.time.js"></script>
+            <script src="~/lib/raphael/raphael.js"></script>
+            <script src="~/lib/raphael-pie/raphael-pie.js"></script>
+            <script src="~/lib/jquery.easing/js/jquery.easing.js"></script>
+            <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
+
+        <script type="text/javascript">
+            sceneStateManager.init('Z485739881');
+        </script>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

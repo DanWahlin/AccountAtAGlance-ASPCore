@@ -1,0 +1,59 @@
+﻿<script id="QuoteDataTemplate_Small" type="text/x-handlebars-template">
+    {{last}}
+</script>
+
+<script id="QuoteDataTemplate_Medium" type="text/x-handlebars-template">
+    <div id="QuoteDiv">
+        <span id="QuoteCompany">{{company}}</span><br />
+        <span id="QuoteLast">{{last}}</span>&nbsp;
+        <span id="QuoteChange" class="{{getChangeCSSClass change}}">{{change}}</span>&nbsp;
+        <span id="QuotePercentChange" class="{{getChangeCSSClass percentChange}}">{{percentChange}}%</span>
+    </div>
+    <div id="QuoteDetailsDiv">
+        <table style="font-size:8pt;">
+            <tr>
+                <td style="width:16%" class="Bold">Open</td>
+                <td style="width:16%" class="Bold">Day Low</td>
+                <td style="width:16%" class="Bold">Day High</td>
+            </tr>
+            <tr>
+                <td style="width:16%" class="Currency">{{open}}</td>
+                <td style="width:16%" class="Currency">{{dayLow}}</td>
+                <td style="width:16%" class="Currency">{{dayHigh}}</td>
+            </tr>
+        </table>
+    </div>
+    <div style="clear:both"></div>
+</script>
+
+<script id="QuoteDataTemplate_Large" type="text/x-handlebars-template">
+    <div style="float:left;width:40%;">
+        <div id="QuoteDiv">
+            <span id="QuoteCompany">{{company}}</span><br />
+            <span id="QuoteLast">{{last}}</span>&nbsp;
+            <span id="QuoteChange" class="{{getChangeCSSClass change}}">{{change}}</span>&nbsp;
+            <span id="QuotePercentChange" class="{{getChangeCSSClass percentChange}}">{{percentChange}}%</span>
+        </div>
+    </div>
+    <div style="float:right;width:60%;">
+        <table style="font-size:8pt;margin-top:17px;">
+            <tr>
+                <td style="width:12%" class="Bold" nowrap>Open</td>
+                <td style="width:12%" class="Currency" nowrap>{{open}}</td>
+                <td style="width:18%" class="Bold" nowrap>Day Low</td>
+                <td style="width:18%" class="Currency" nowrap>{{dayLow}}</td>
+                <td style="width:16%" class="Bold" nowrap>Day High</td>
+                <td style="width:24%" class="Currency" nowrap>{{dayHigh}}</td>
+            </tr>
+            <tr>
+                <td class="Bold" nowrap>Dividend</td>
+                <td class="Currency" nowrap>{{dividend}}</td>
+                <td class="Bold" nowrap>Market Cap</td>
+                <td class="Currency" nowrap>{{marketCap}}</td>
+                <td class="Bold" nowrap>Volume</td>
+                <td class="Currency" nowrap>{{volume}}</td>
+            </tr>
+        </table>
+    </div>
+    <div style="clear:both"></div>
+</script>

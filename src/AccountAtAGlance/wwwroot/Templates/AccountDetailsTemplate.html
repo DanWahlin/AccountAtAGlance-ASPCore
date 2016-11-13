@@ -1,0 +1,71 @@
+﻿<script id="AccountDetailsTemplate_Small" type="text/x-handlebars-template">
+     <div class="content">
+        <header>
+            <span>ACCOUNT DETAILS</span>
+        </header>
+        <section>
+            <span class="Currency Positive" style="font-size: 20pt">{{total}}"</span>
+        </section>
+    </div>
+</script>
+
+<script id="AccountDetailsTemplate_Medium" type="text/x-handlebars-template">
+    <div class="content">
+        <header>
+           <span>ACCOUNT DETAILS</span>
+        </header>
+        <section style="padding-top:10px;">
+            {{> AccountDetailsTemplate_Partial}}
+        </section>
+    </div>
+    <div class="stickyfooter" style="background-color: #fbcccc;">       
+        <div class="Left Bold">Total:</div>
+        <div>
+            <span class="Currency pull-right">{{total}}&nbsp;&nbsp;</span>
+        </div>
+        <div class="Clear" />           
+    </div> 
+</script>
+
+<script id="AccountDetailsTemplate_Large" type="text/x-handlebars-template">
+     <div class="content">
+        <header>
+            <span>ACCOUNT DETAILS - {{accountTitle}}</span>
+        </header>
+        <section style="padding-top:5px;">
+            {{> AccountDetailsTemplate_Partial}}
+            <div style="margin-top:-10px;">
+                <div id="AccountPositionsSVG"></div>
+            </div>
+        </section>
+    </div>
+    <div class="stickyfooter" style="background-color: #fbcccc; ">       
+        <div class="Left Bold">Total:</div>
+        <div>
+            <span class="Currency pull-right">{{total}}&nbsp;&nbsp;</span>
+        </div>
+        <div class="Clear" />           
+    </div> 
+</script>
+
+<script id="AccountDetailsTemplate_Partial" type="text/x-handlebars-template">
+    <div class="Left">Cash</div> 
+    <div>
+        <span class="Currency pull-right">{{cashTotal}}</span>
+    </div>
+    <div class="Clear" />
+
+    {{#unless IsRetirement}}
+        <div class="Left" style="margin-top:6px;">Available Margin</div> 
+        <div style="margin-top:6px;">
+            <span class="Currency pull-right">{{marginBalance}}</span>
+        </div>
+        <div class="Clear" />
+    {{/unless}}
+
+    <div class="Left" style="margin-top:6px;">Positions</div> 
+    <div style="margin-top:6px;">
+        <span class="Currency pull-right">{{positionsTotal}}</span>
+    </div>
+    <div class="Clear" />
+</script>
