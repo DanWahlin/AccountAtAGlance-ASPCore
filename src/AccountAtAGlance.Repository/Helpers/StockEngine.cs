@@ -178,9 +178,5 @@ namespace AccountAtAGlance.Repository.Helpers
             //financeUrl = "http://localhost:" + port + "/XML/financequotes.xml";
         }
 
-        string marketsUrl;
-        string financeUrl;
-
-
     }
 }
