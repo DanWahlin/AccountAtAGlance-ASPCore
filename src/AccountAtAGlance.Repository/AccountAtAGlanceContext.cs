@@ -68,7 +68,13 @@ namespace AccountAtAGlance.Repository
             OperationStatus opStatus = new OperationStatus { Status = true };
             try
             {
-                await Database.ExecuteSqlCommandAsync("DeleteAccounts");
+                //await Database.ExecuteSqlCommandAsync("DeleteAccounts");
+                await Database.ExecuteSqlCommandAsync(@"
+				    DELETE FROM Orders;                                              
+				    DELETE FROM BrokerageAccounts;
+				    DELETE FROM Customers;	
+                ");
+
             }
             catch (Exception exp)
             {
@@ -82,7 +88,14 @@ namespace AccountAtAGlance.Repository
             OperationStatus opStatus = new OperationStatus { Status = true };
             try
             {
-                await Database.ExecuteSqlCommandAsync("DeleteSecuritiesAndExchanges");
+                //await Database.ExecuteSqlCommandAsync("DeleteSecuritiesAndExchanges");
+                await Database.ExecuteSqlCommandAsync(@"
+			      DELETE FROM Positions;   
+			      DELETE FROM Stocks;
+			      DELETE FROM MutualFunds;
+			      DELETE FROM Exchanges; 
+			      DELETE FROM MarketIndexes;
+                ");
             }
             catch (Exception exp)
             {

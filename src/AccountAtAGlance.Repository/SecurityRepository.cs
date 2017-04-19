@@ -27,7 +27,7 @@ namespace AccountAtAGlance.Repository
 
         public async Task<Security> GetSecurityAsync(string symbol)
         {
-            var stock = await DataContext.Stocks.SingleOrDefaultAsync(s => s.Symbol == symbol);
+            var stock = await DataContext.Stocks.SingleOrDefaultAsync(s => s.Symbol == symbol.ToUpper());
             if (stock != null)
             {
                 stock.DataPoints = new DataSimulator().GetDataPoints(stock.Last);

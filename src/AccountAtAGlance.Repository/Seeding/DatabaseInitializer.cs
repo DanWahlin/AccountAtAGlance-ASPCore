@@ -41,6 +41,9 @@ namespace AccountAtAGlance.Repository.Seeding
         {
             await Task.Run(async () =>
             {
+                /*
+                 * Removing so the app works with Sqlite
+                 * 
                 var deleteSecuritiesExchanges = @"
                     CREATE PROCEDURE dbo.DeleteSecuritiesAndExchanges
 
@@ -85,11 +88,13 @@ namespace AccountAtAGlance.Repository.Seeding
 			                    END CATCH
 	                    END	
 	                ";
+                */
 
                 using (var connection = _Context.Database.GetDbConnection())
                 {
                     connection.Open();
 
+                    /*
                     using (var command = connection.CreateCommand())
                     {
                         command.CommandText = deleteSecuritiesExchanges;
@@ -98,6 +103,7 @@ namespace AccountAtAGlance.Repository.Seeding
                         command.CommandText = deleteAccounts;
                         command.ExecuteNonQuery();
                     }
+                    */
 
                     await _SecurityRepository.InsertSecurityDataAsync();
                     await _MarketsAndNewsRepository.InsertMarketDataAsync();

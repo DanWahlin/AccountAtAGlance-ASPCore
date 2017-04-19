@@ -33,10 +33,11 @@ namespace AccountAtAGlance
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add Entity Framework services to the services container.
+            // Add Entity Framework services to the services container
             services.AddDbContext<AccountAtAGlanceContext>(options =>
                 {
-                    options.UseSqlServer(Configuration.GetConnectionString("AccountAtAGlance"));
+                    //options.UseSqlServer(Configuration.GetConnectionString("AccountAtAGlance"));
+                    options.UseSqlite(Configuration.GetConnectionString("AccountAtAGlanceSqlite"));
                 });
 
             // Add MVC services to the services container.

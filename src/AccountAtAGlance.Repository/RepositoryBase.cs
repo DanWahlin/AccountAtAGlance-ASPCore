@@ -54,9 +54,9 @@ namespace AccountAtAGlance.Repository
                 return coll;
 
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                //Log error
+                OperationStatus.CreateFromException("Error executing GetList<T>: ", exp);
             }
             return null;
         }
@@ -68,9 +68,9 @@ namespace AccountAtAGlance.Repository
             {
                 return GetList(predicate).OrderBy(orderBy);
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                //Log error
+                OperationStatus.CreateFromException("Error executing GetList<T, TKey>: ", exp);
             }
             return null;
         }
@@ -81,9 +81,9 @@ namespace AccountAtAGlance.Repository
             {
                 return GetList<T>().OrderBy(orderBy);
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                //Log error
+                OperationStatus.CreateFromException("Error executing GetList<T, TKey>: ", exp);
             }
             return null;
         }
@@ -94,9 +94,9 @@ namespace AccountAtAGlance.Repository
             {
                 return DataContext.Set<T>();
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                //Log error
+                OperationStatus.CreateFromException("Error executing GetLIst<T>: ", exp);
             }
             return null;
         }
