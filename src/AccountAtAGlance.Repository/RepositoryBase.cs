@@ -10,8 +10,6 @@ namespace AccountAtAGlance.Repository
     public abstract class RepositoryBase<TContext> : IDisposable
         where TContext : DbContext, IDisposedTracker, new()
     {
-        TContext _DataContext;
-        IServiceProvider _ServiceProvider; 
 
         public RepositoryBase(TContext context)
         {
