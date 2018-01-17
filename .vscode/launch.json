@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/src/AccountAtAGlance/bin/Debug/netcoreapp1.1/AccountAtAGlance.dll",
+            "program": "${workspaceRoot}/src/AccountAtAGlance/bin/Debug/netcoreapp2.0/AccountAtAGlance.dll",
             "args": [],
             "cwd": "${workspaceRoot}/src/AccountAtAGlance",
             "stopAtEntry": false,

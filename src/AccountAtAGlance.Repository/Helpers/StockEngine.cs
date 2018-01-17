@@ -7,6 +7,7 @@ using AccountAtAGlance.Model;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace AccountAtAGlance.Repository.Helpers
 {
@@ -17,16 +18,14 @@ namespace AccountAtAGlance.Repository.Helpers
     {       
         public async Task<List<Security>> GetSecurityQuotesAsync(params string[] symbols)
         {
-            //Dropbox link: http://goo.gl/vzzPq
-            XDocument doc = await CreateXDocumentAsync("http://goo.gl/vzzPq");
+            XDocument doc = await CreateXDocumentAsync("https://raw.githubusercontent.com/DanWahlin/AccountAtAGlance-ASPCore/master/src/AccountAtAGlance/XML/financequotes.xml");
             if (symbols.Length > 0) FilterSymbols(doc, symbols);
             return ParseSecurities(doc);
         }
 
         public async Task<List<MarketIndex>> GetMarketQuotesAsync(params string[] symbols)
         {
-            //Dropbox link: http://goo.gl/29zZb
-            XDocument doc = await CreateXDocumentAsync("http://goo.gl/29zZb");
+            XDocument doc = await CreateXDocumentAsync("https://raw.githubusercontent.com/DanWahlin/AccountAtAGlance-ASPCore/master/src/AccountAtAGlance/XML/marketquotes.xml");
             if (symbols.Length > 0) FilterSymbols(doc, symbols);
             return ParseMarketIndexes(doc);
         }

@@ -24,6 +24,8 @@ namespace AccountAtAGlance.Repository.Seeding
         public async Task SeedAsync()
         {
             var db = _Context.Database;
+            // db.EnsureCreated();
+            // await InsertSampleData();
             if (db != null)
             {
                 if (await db.EnsureCreatedAsync())

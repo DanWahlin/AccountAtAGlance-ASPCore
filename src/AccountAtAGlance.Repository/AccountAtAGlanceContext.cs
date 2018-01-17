@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AccountAtAGlance.Model;
-using System.Threading.Tasks;
 using AccountAtAGlance.Repository.Interfaces;
 
 namespace AccountAtAGlance.Repository
