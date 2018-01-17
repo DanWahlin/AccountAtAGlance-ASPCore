@@ -9,7 +9,7 @@ Open the .sln file at the root of the project and press F5 to build and launch t
 #### Run on Mac
 
 1. Install .NET Core 2+: https://www.microsoft.com/net/download
-1. Open a command window in the project's root folder.
+1. Open a command window in the the `src/AccountAtAGlance` folder.
 1. Run `dotnet restore`
 1. Run `dotnet build`
 1. Run `dotnet run`
