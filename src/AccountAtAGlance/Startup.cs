@@ -47,19 +47,14 @@ namespace AccountAtAGlance
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, 
             IHostingEnvironment env, 
-            ILoggerFactory loggerFactory,
             DatabaseInitializer dbInitializer)
         {
-            loggerFactory.AddConsole();
-            loggerFactory.AddDebug();
-
             // Configure the HTTP request pipeline.
 
             // Add the following to the request pipeline only in development environment.
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
+                  app.UseDeveloperExceptionPage();
             }
             else
             {
