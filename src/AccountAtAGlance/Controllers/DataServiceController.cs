@@ -10,7 +10,7 @@ using AccountAtAGlance.Repository.Interfaces;
 namespace AccountAtAGlance.Controllers
 {
     [Route("api/[controller]")]
-    public class DataServiceController : Controller
+    public class DataServiceController : ControllerBase
     {
         IAccountRepository _AccountRepository;
         ISecurityRepository _SecurityRepository;
