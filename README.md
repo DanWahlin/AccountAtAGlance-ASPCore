@@ -8,7 +8,7 @@ Open the .sln file at the root of the project and press F5 to build and launch t
 
 #### Run on Mac
 
-1. Install .NET Core 2+: https://www.microsoft.com/net/download
+1. Install .NET Core 2+: https://www.microsoft.com/net/download?WT.mc_id=m365-0000-dwahlin
 1. Open a command window in the root of the project.
 1. Run `dotnet restore`
 1. Run `dotnet build`
